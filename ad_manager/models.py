@@ -1,10 +1,6 @@
 # Stdlib
 import copy
-import glob
-import json
 import logging
-import os
-import tarfile
 
 # External packages
 import jsonfield

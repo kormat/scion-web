@@ -679,7 +679,8 @@ def generate_topology(request):
     zk_dict = name_entry_dict(tp.getlist('input{}Name'.format(s_type)),
                               tp.getlist('input{}Address'.format(s_type)),
                               tp.getlist('input{}Port'.format(s_type)),
-                              tp.getlist('input{}InternalAddress'.format(s_type)),
+                              tp.getlist(
+                                  'input{}InternalAddress'.format(s_type)),
                               tp.getlist('input{}InternalPort'.format(s_type)),
                               )
     named_keys = list(zk_dict.keys())  # copy 'named' keys
@@ -982,7 +983,7 @@ def particular_topo_instance(tp, type_key):
                 internal_port = singular_topo[server_type][entry].pop(
                     'PortInternal')
                 if type_key == 'BorderRouters':
-                    continue # Border routers only know about external
+                    continue  # Border routers only know about external
                 if internal_address != '':
                     singular_topo[server_type][entry]['Addr'] = internal_address
                 if internal_port is not None:
